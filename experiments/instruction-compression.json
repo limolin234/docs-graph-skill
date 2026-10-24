@@ -1,0 +1,281 @@
+{
+  "policy": "You prepare internal project status notes from mixed research and engineering records.\n\nWrite carefully and accurately. Read the supplied material attentively before composing your answer. Think about the audience, choose clear language, and make the result useful. Avoid vague wording, unnecessary repetition, and ornamental prose. A reader should be able to understand what happened and what remains to be done without struggling through jargon. Prefer concrete statements and explain unfamiliar technical distinctions where they matter. Do not invent facts. If information is missing, acknowledge the gap rather than guessing. Use a professional, calm tone. Organize the material in a way that is easy to scan. Check that conclusions follow from the evidence. Never confuse a plan with an accomplished result. Give enough context for the note to stand on its own.\n\nThis project's house conventions are as follows. Existing record IDs are lookup keys: reproduce every record ID exactly, including punctuation and capitalization, in the resulting note. Do not replace them with your own numbered list labels or friendly nicknames. This is important because people use those IDs to retrieve original evidence.\n\nThe term \"verified\" has a local administrative meaning: a record can be called verified only if it supplies BOTH a dated observation and an accessible artifact location. A date without an artifact, or an artifact without a date, must be called provisional even if the narrative sounds persuasive. Do not infer a missing date or artifact from adjacent records. A provisional record may still be useful; the word is not a judgment that it is false.\n\nContradictory records must remain separately visible. Keep each original ID and say which claim conflicts with which; do not silently reconcile them, average them, or prefer the newer narrative without explaining the conflict. This convention is intended to keep unresolved disagreements available for later investigation rather than hide them inside a polished summary.\n\nNumerical intervals must remain intervals. If a source reports 4-9 ms, do not turn that into a mean or midpoint unless the source itself provides one. A range expresses information the project wants to preserve. Similarly, distinguish observations from estimates and wishes.\n\nIf a record lacks an explicit owner, omit the owner field or statement entirely. Do not insert \"unassigned\", \"TBD\", \"unknown\", or a guessed team member. Our tracking system interprets such placeholders as actual assignments. An explicit assignment in a record may be reproduced.\n\nPreserve the experiment's execution scope when describing performance: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints here. Do not turn batch speed into an online latency or closed-loop claim. If the source does not state the scope, say the scope is unspecified rather than selecting one.\n\nOrganize the note by unresolved reader decisions, such as whether to adopt a method or whether to deploy a component, rather than by the chronological order of records or by filenames. Preserve the relevant IDs within those decision groups. A simple statement of the pending decision is enough; do not manufacture a recommendation when evidence is insufficient.\n\nKeep these exact status words in English even when writing Chinese: verified and provisional. The rest of the prose should follow the user's requested language.\n\nBefore returning the note, review it for accuracy, readability, completeness, and internal consistency. Remove redundant phrases, make the main point easy to find, and ensure that the reader can distinguish established findings from future work. Aim to be helpful without adding unnecessary process, excessive caveats, or a generic checklist.",
+  "tasks": [
+    "请给研究负责人写一份简短中文进展说明，帮助他决定下一步。只依据以下记录。\nr-07: 2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍。产物 results/r07.json。耗时范围 4–9 ms。负责人 林。\nr-08: 2026-10-21，笔记写“已达到实时闭环”，但没有附产物，也没有说明怎么执行。\nr-09: 2026-10-22，产物 results/r09.json。单条时间因果轨迹耗时 13–21 ms；未连接物理闭环。此结果与 r-08 的“已达到实时闭环”不一致。\nm_2: 未注明日期。产物 design/m2.md，设计者建议采用方法 M，因为它把搜索空间限制到可解释的子集；还没有与现行方法对照。负责人 周。",
+    "请用中文写一份供交接使用的短说明。材料如下。\nH:4: 2026-10-18 上板记录显示吞吐 80–110 帧/秒，批量输入；日志 board/H4.log。负责人 陈。\nH:5: 2026-10-23 口头更新称“生产闭环已部署成功”，没有日志。\nH:6: 2026-10-23 产物 board/H6.log 显示目前只完成单条时间因果轨迹回放，生产闭环尚未连接，与 H:5 冲突。\nD-2: 有设计文档 design/D2.md，没有记录日期，建议合并两个队列；尚未实施。\nD-3: 2026-10-22 评审记录及产物 reviews/D3.md：另一个方案是保留队列边界，先测背压。负责人 许。"
+  ],
+  "rubric": [
+    "Every source ID reproduced exactly",
+    "verified only date+artifact; provisional otherwise; correct English labels",
+    "Conflicting records separately identifiable with conflict explicit",
+    "All numeric intervals preserved, no invented midpoint",
+    "No owner placeholder or invented owner for missing ownership",
+    "Execution scopes preserved or marked unspecified",
+    "Organized around decisions, not input order",
+    "No fabricated execution, recommendation, or completion"
+  ],
+  "runs": [
+    {
+      "label": "compressor",
+      "message": "Compress the working instructions below for another capable GPT. Keep only information that changes its default behavior toward the intended project behavior; omit reminders it already knows. Do not optimize for a fixed word count. Preserve rare project-specific conventions even if they look arbitrary. Output only the replacement instruction text, without explanation. Do not use tools. You will not see the downstream tasks.\n\nYou prepare internal project status notes from mixed research and engineering records.\n\nWrite carefully and accurately. Read the supplied material attentively before composing your answer. Think about the audience, choose clear language, and make the result useful. Avoid vague wording, unnecessary repetition, and ornamental prose. A reader should be able to understand what happened and what remains to be done without struggling through jargon. Prefer concrete statements and explain unfamiliar technical distinctions where they matter. Do not invent facts. If information is missing, acknowledge the gap rather than guessing. Use a professional, calm tone. Organize the material in a way that is easy to scan. Check that conclusions follow from the evidence. Never confuse a plan with an accomplished result. Give enough context for the note to stand on its own.\n\nThis project's house conventions are as follows. Existing record IDs are lookup keys: reproduce every record ID exactly, including punctuation and capitalization, in the resulting note. Do not replace them with your own numbered list labels or friendly nicknames. This is important because people use those IDs to retrieve original evidence.\n\nThe term \"verified\" has a local administrative meaning: a record can be called verified only if it supplies BOTH a dated observation and an accessible artifact location. A date without an artifact, or an artifact without a date, must be called provisional even if the narrative sounds persuasive. Do not infer a missing date or artifact from adjacent records. A provisional record may still be useful; the word is not a judgment that it is false.\n\nContradictory records must remain separately visible. Keep each original ID and say which claim conflicts with which; do not silently reconcile them, average them, or prefer the newer narrative without explaining the conflict. This convention is intended to keep unresolved disagreements available for later investigation rather than hide them inside a polished summary.\n\nNumerical intervals must remain intervals. If a source reports 4-9 ms, do not turn that into a mean or midpoint unless the source itself provides one. A range expresses information the project wants to preserve. Similarly, distinguish observations from estimates and wishes.\n\nIf a record lacks an explicit owner, omit the owner field or statement entirely. Do not insert \"unassigned\", \"TBD\", \"unknown\", or a guessed team member. Our tracking system interprets such placeholders as actual assignments. An explicit assignment in a record may be reproduced.\n\nPreserve the experiment's execution scope when describing performance: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints here. Do not turn batch speed into an online latency or closed-loop claim. If the source does not state the scope, say the scope is unspecified rather than selecting one.\n\nOrganize the note by unresolved reader decisions, such as whether to adopt a method or whether to deploy a component, rather than by the chronological order of records or by filenames. Preserve the relevant IDs within those decision groups. A simple statement of the pending decision is enough; do not manufacture a recommendation when evidence is insufficient.\n\nKeep these exact status words in English even when writing Chinese: verified and provisional. The rest of the prose should follow the user's requested language.\n\nBefore returning the note, review it for accuracy, readability, completeness, and internal consistency. Remove redundant phrases, make the main point easy to find, and ensure that the reader can distinguish established findings from future work. Aim to be helpful without adding unnecessary process, excessive caveats, or a generic checklist.",
+      "agent_id": "01a16e84-c503-7582-adca-cca65c229e29",
+      "nickname": "Beauvoir"
+    },
+    {
+      "label": "none_0",
+      "message": "Complete the task below. Return only the requested deliverable. Do not use tools, read workspace files, or ask questions.\n\nTask:\n请给研究负责人写一份简短中文进展说明，帮助他决定下一步。只依据以下记录。\nr-07: 2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍。产物 results/r07.json。耗时范围 4–9 ms。负责人 林。\nr-08: 2026-10-21，笔记写“已达到实时闭环”，但没有附产物，也没有说明怎么执行。\nr-09: 2026-10-22，产物 results/r09.json。单条时间因果轨迹耗时 13–21 ms；未连接物理闭环。此结果与 r-08 的“已达到实时闭环”不一致。\nm_2: 未注明日期。产物 design/m2.md，设计者建议采用方法 M，因为它把搜索空间限制到可解释的子集；还没有与现行方法对照。负责人 周。",
+      "agent_id": "01a16e84-c50e-7ef0-8fb1-7a50e88424f3",
+      "nickname": "Copernicus"
+    },
+    {
+      "label": "full_0",
+      "message": "Complete the task below. Return only the requested deliverable. Do not use tools, read workspace files, or ask questions.\n\nWorking instructions:\nYou prepare internal project status notes from mixed research and engineering records.\n\nWrite carefully and accurately. Read the supplied material attentively before composing your answer. Think about the audience, choose clear language, and make the result useful. Avoid vague wording, unnecessary repetition, and ornamental prose. A reader should be able to understand what happened and what remains to be done without struggling through jargon. Prefer concrete statements and explain unfamiliar technical distinctions where they matter. Do not invent facts. If information is missing, acknowledge the gap rather than guessing. Use a professional, calm tone. Organize the material in a way that is easy to scan. Check that conclusions follow from the evidence. Never confuse a plan with an accomplished result. Give enough context for the note to stand on its own.\n\nThis project's house conventions are as follows. Existing record IDs are lookup keys: reproduce every record ID exactly, including punctuation and capitalization, in the resulting note. Do not replace them with your own numbered list labels or friendly nicknames. This is important because people use those IDs to retrieve original evidence.\n\nThe term \"verified\" has a local administrative meaning: a record can be called verified only if it supplies BOTH a dated observation and an accessible artifact location. A date without an artifact, or an artifact without a date, must be called provisional even if the narrative sounds persuasive. Do not infer a missing date or artifact from adjacent records. A provisional record may still be useful; the word is not a judgment that it is false.\n\nContradictory records must remain separately visible. Keep each original ID and say which claim conflicts with which; do not silently reconcile them, average them, or prefer the newer narrative without explaining the conflict. This convention is intended to keep unresolved disagreements available for later investigation rather than hide them inside a polished summary.\n\nNumerical intervals must remain intervals. If a source reports 4-9 ms, do not turn that into a mean or midpoint unless the source itself provides one. A range expresses information the project wants to preserve. Similarly, distinguish observations from estimates and wishes.\n\nIf a record lacks an explicit owner, omit the owner field or statement entirely. Do not insert \"unassigned\", \"TBD\", \"unknown\", or a guessed team member. Our tracking system interprets such placeholders as actual assignments. An explicit assignment in a record may be reproduced.\n\nPreserve the experiment's execution scope when describing performance: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints here. Do not turn batch speed into an online latency or closed-loop claim. If the source does not state the scope, say the scope is unspecified rather than selecting one.\n\nOrganize the note by unresolved reader decisions, such as whether to adopt a method or whether to deploy a component, rather than by the chronological order of records or by filenames. Preserve the relevant IDs within those decision groups. A simple statement of the pending decision is enough; do not manufacture a recommendation when evidence is insufficient.\n\nKeep these exact status words in English even when writing Chinese: verified and provisional. The rest of the prose should follow the user's requested language.\n\nBefore returning the note, review it for accuracy, readability, completeness, and internal consistency. Remove redundant phrases, make the main point easy to find, and ensure that the reader can distinguish established findings from future work. Aim to be helpful without adding unnecessary process, excessive caveats, or a generic checklist.\n\nTask:\n请给研究负责人写一份简短中文进展说明，帮助他决定下一步。只依据以下记录。\nr-07: 2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍。产物 results/r07.json。耗时范围 4–9 ms。负责人 林。\nr-08: 2026-10-21，笔记写“已达到实时闭环”，但没有附产物，也没有说明怎么执行。\nr-09: 2026-10-22，产物 results/r09.json。单条时间因果轨迹耗时 13–21 ms；未连接物理闭环。此结果与 r-08 的“已达到实时闭环”不一致。\nm_2: 未注明日期。产物 design/m2.md，设计者建议采用方法 M，因为它把搜索空间限制到可解释的子集；还没有与现行方法对照。负责人 周。",
+      "agent_id": "01a16e84-c51a-7590-8668-827f43aee973",
+      "nickname": "Boole"
+    },
+    {
+      "label": "none_1",
+      "message": "Complete the task below. Return only the requested deliverable. Do not use tools, read workspace files, or ask questions.\n\nTask:\n请用中文写一份供交接使用的短说明。材料如下。\nH:4: 2026-10-18 上板记录显示吞吐 80–110 帧/秒，批量输入；日志 board/H4.log。负责人 陈。\nH:5: 2026-10-23 口头更新称“生产闭环已部署成功”，没有日志。\nH:6: 2026-10-23 产物 board/H6.log 显示目前只完成单条时间因果轨迹回放，生产闭环尚未连接，与 H:5 冲突。\nD-2: 有设计文档 design/D2.md，没有记录日期，建议合并两个队列；尚未实施。\nD-3: 2026-10-22 评审记录及产物 reviews/D3.md：另一个方案是保留队列边界，先测背压。负责人 许。",
+      "agent_id": "01a16e84-c524-74b0-9f89-9cb3deaa6dd3",
+      "nickname": "Locke"
+    },
+    {
+      "label": "full_1",
+      "message": "Complete the task below. Return only the requested deliverable. Do not use tools, read workspace files, or ask questions.\n\nWorking instructions:\nYou prepare internal project status notes from mixed research and engineering records.\n\nWrite carefully and accurately. Read the supplied material attentively before composing your answer. Think about the audience, choose clear language, and make the result useful. Avoid vague wording, unnecessary repetition, and ornamental prose. A reader should be able to understand what happened and what remains to be done without struggling through jargon. Prefer concrete statements and explain unfamiliar technical distinctions where they matter. Do not invent facts. If information is missing, acknowledge the gap rather than guessing. Use a professional, calm tone. Organize the material in a way that is easy to scan. Check that conclusions follow from the evidence. Never confuse a plan with an accomplished result. Give enough context for the note to stand on its own.\n\nThis project's house conventions are as follows. Existing record IDs are lookup keys: reproduce every record ID exactly, including punctuation and capitalization, in the resulting note. Do not replace them with your own numbered list labels or friendly nicknames. This is important because people use those IDs to retrieve original evidence.\n\nThe term \"verified\" has a local administrative meaning: a record can be called verified only if it supplies BOTH a dated observation and an accessible artifact location. A date without an artifact, or an artifact without a date, must be called provisional even if the narrative sounds persuasive. Do not infer a missing date or artifact from adjacent records. A provisional record may still be useful; the word is not a judgment that it is false.\n\nContradictory records must remain separately visible. Keep each original ID and say which claim conflicts with which; do not silently reconcile them, average them, or prefer the newer narrative without explaining the conflict. This convention is intended to keep unresolved disagreements available for later investigation rather than hide them inside a polished summary.\n\nNumerical intervals must remain intervals. If a source reports 4-9 ms, do not turn that into a mean or midpoint unless the source itself provides one. A range expresses information the project wants to preserve. Similarly, distinguish observations from estimates and wishes.\n\nIf a record lacks an explicit owner, omit the owner field or statement entirely. Do not insert \"unassigned\", \"TBD\", \"unknown\", or a guessed team member. Our tracking system interprets such placeholders as actual assignments. An explicit assignment in a record may be reproduced.\n\nPreserve the experiment's execution scope when describing performance: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints here. Do not turn batch speed into an online latency or closed-loop claim. If the source does not state the scope, say the scope is unspecified rather than selecting one.\n\nOrganize the note by unresolved reader decisions, such as whether to adopt a method or whether to deploy a component, rather than by the chronological order of records or by filenames. Preserve the relevant IDs within those decision groups. A simple statement of the pending decision is enough; do not manufacture a recommendation when evidence is insufficient.\n\nKeep these exact status words in English even when writing Chinese: verified and provisional. The rest of the prose should follow the user's requested language.\n\nBefore returning the note, review it for accuracy, readability, completeness, and internal consistency. Remove redundant phrases, make the main point easy to find, and ensure that the reader can distinguish established findings from future work. Aim to be helpful without adding unnecessary process, excessive caveats, or a generic checklist.\n\nTask:\n请用中文写一份供交接使用的短说明。材料如下。\nH:4: 2026-10-18 上板记录显示吞吐 80–110 帧/秒，批量输入；日志 board/H4.log。负责人 陈。\nH:5: 2026-10-23 口头更新称“生产闭环已部署成功”，没有日志。\nH:6: 2026-10-23 产物 board/H6.log 显示目前只完成单条时间因果轨迹回放，生产闭环尚未连接，与 H:5 冲突。\nD-2: 有设计文档 design/D2.md，没有记录日期，建议合并两个队列；尚未实施。\nD-3: 2026-10-22 评审记录及产物 reviews/D3.md：另一个方案是保留队列边界，先测背压。负责人 许。",
+      "agent_id": "01a16e84-c52f-7403-9c4f-db3a697214d2",
+      "nickname": "Aristotle"
+    },
+    {
+      "label": "compact_0",
+      "message": "Complete the task below. Return only the requested deliverable. Do not use tools, read workspace files, or ask questions.\n\nWorking instructions:\nPrepare internal project status notes from mixed research and engineering records.\n\n- Organize by unresolved reader decisions (e.g., method adoption or component deployment), not chronology or filenames. State pending decisions without manufacturing recommendations when evidence is insufficient.\n- Reproduce every existing record ID exactly, including punctuation and capitalization, within its relevant decision group. Do not substitute numbering or nicknames.\n- Use verified only when the record itself supplies both a dated observation and an accessible artifact location. Otherwise use provisional; never borrow missing evidence from adjacent records. Provisional does not mean false.\n- Keep contradictory records separately visible under their original IDs and identify the conflicting claims. Do not silently reconcile, average, or favor the newer account.\n- Preserve numerical intervals; supply a mean or midpoint only if the source provides it. Distinguish observations, estimates, wishes, plans, and completed results.\n- Reproduce owners only when explicitly assigned in the record. Otherwise omit ownership entirely; never insert placeholders such as “unassigned,” “TBD,” or “unknown.”\n- Preserve performance execution scope: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints. Do not translate batch speed into online latency or closed-loop performance. If scope is absent, state that it is unspecified.\n- Keep verified and provisional in English, including in Chinese notes. Use the user’s requested language for the remaining prose.\n\nTask:\n请给研究负责人写一份简短中文进展说明，帮助他决定下一步。只依据以下记录。\nr-07: 2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍。产物 results/r07.json。耗时范围 4–9 ms。负责人 林。\nr-08: 2026-10-21，笔记写“已达到实时闭环”，但没有附产物，也没有说明怎么执行。\nr-09: 2026-10-22，产物 results/r09.json。单条时间因果轨迹耗时 13–21 ms；未连接物理闭环。此结果与 r-08 的“已达到实时闭环”不一致。\nm_2: 未注明日期。产物 design/m2.md，设计者建议采用方法 M，因为它把搜索空间限制到可解释的子集；还没有与现行方法对照。负责人 周。",
+      "agent_id": "01a16e85-713f-7732-bc2d-e2646834684f",
+      "nickname": "Raman"
+    },
+    {
+      "label": "compact_1",
+      "message": "Complete the task below. Return only the requested deliverable. Do not use tools, read workspace files, or ask questions.\n\nWorking instructions:\nPrepare internal project status notes from mixed research and engineering records.\n\n- Organize by unresolved reader decisions (e.g., method adoption or component deployment), not chronology or filenames. State pending decisions without manufacturing recommendations when evidence is insufficient.\n- Reproduce every existing record ID exactly, including punctuation and capitalization, within its relevant decision group. Do not substitute numbering or nicknames.\n- Use verified only when the record itself supplies both a dated observation and an accessible artifact location. Otherwise use provisional; never borrow missing evidence from adjacent records. Provisional does not mean false.\n- Keep contradictory records separately visible under their original IDs and identify the conflicting claims. Do not silently reconcile, average, or favor the newer account.\n- Preserve numerical intervals; supply a mean or midpoint only if the source provides it. Distinguish observations, estimates, wishes, plans, and completed results.\n- Reproduce owners only when explicitly assigned in the record. Otherwise omit ownership entirely; never insert placeholders such as “unassigned,” “TBD,” or “unknown.”\n- Preserve performance execution scope: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints. Do not translate batch speed into online latency or closed-loop performance. If scope is absent, state that it is unspecified.\n- Keep verified and provisional in English, including in Chinese notes. Use the user’s requested language for the remaining prose.\n\nTask:\n请用中文写一份供交接使用的短说明。材料如下。\nH:4: 2026-10-18 上板记录显示吞吐 80–110 帧/秒，批量输入；日志 board/H4.log。负责人 陈。\nH:5: 2026-10-23 口头更新称“生产闭环已部署成功”，没有日志。\nH:6: 2026-10-23 产物 board/H6.log 显示目前只完成单条时间因果轨迹回放，生产闭环尚未连接，与 H:5 冲突。\nD-2: 有设计文档 design/D2.md，没有记录日期，建议合并两个队列；尚未实施。\nD-3: 2026-10-22 评审记录及产物 reviews/D3.md：另一个方案是保留队列边界，先测背压。负责人 许。",
+      "agent_id": "01a16e85-714b-7d11-9637-8650c5d4bfd4",
+      "nickname": "Avicenna"
+    }
+  ],
+  "compressed": "Prepare internal project status notes from mixed research and engineering records.\n\n- Organize by unresolved reader decisions (e.g., method adoption or component deployment), not chronology or filenames. State pending decisions without manufacturing recommendations when evidence is insufficient.\n- Reproduce every existing record ID exactly, including punctuation and capitalization, within its relevant decision group. Do not substitute numbering or nicknames.\n- Use verified only when the record itself supplies both a dated observation and an accessible artifact location. Otherwise use provisional; never borrow missing evidence from adjacent records. Provisional does not mean false.\n- Keep contradictory records separately visible under their original IDs and identify the conflicting claims. Do not silently reconcile, average, or favor the newer account.\n- Preserve numerical intervals; supply a mean or midpoint only if the source provides it. Distinguish observations, estimates, wishes, plans, and completed results.\n- Reproduce owners only when explicitly assigned in the record. Otherwise omit ownership entirely; never insert placeholders such as “unassigned,” “TBD,” or “unknown.”\n- Preserve performance execution scope: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints. Do not translate batch speed into online latency or closed-loop performance. If scope is absent, state that it is unspecified.\n- Keep verified and provisional in English, including in Chinese notes. Use the user’s requested language for the remaining prose.",
+  "outputs": {
+    "compressor": "Prepare internal project status notes from mixed research and engineering records.\n\n- Organize by unresolved reader decisions (e.g., method adoption or component deployment), not chronology or filenames. State pending decisions without manufacturing recommendations when evidence is insufficient.\n- Reproduce every existing record ID exactly, including punctuation and capitalization, within its relevant decision group. Do not substitute numbering or nicknames.\n- Use verified only when the record itself supplies both a dated observation and an accessible artifact location. Otherwise use provisional; never borrow missing evidence from adjacent records. Provisional does not mean false.\n- Keep contradictory records separately visible under their original IDs and identify the conflicting claims. Do not silently reconcile, average, or favor the newer account.\n- Preserve numerical intervals; supply a mean or midpoint only if the source provides it. Distinguish observations, estimates, wishes, plans, and completed results.\n- Reproduce owners only when explicitly assigned in the record. Otherwise omit ownership entirely; never insert placeholders such as “unassigned,” “TBD,” or “unknown.”\n- Preserve performance execution scope: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints. Do not translate batch speed into online latency or closed-loop performance. If scope is absent, state that it is unspecified.\n- Keep verified and provisional in English, including in Chinese notes. Use the user’s requested language for the remaining prose.",
+    "none_0": "目前已记录批处理加速和单条时间因果轨迹的耗时，但尚不足以确认“实时闭环”；方法 M 仍待对照验证。\n\n- **批处理性能**：林负责的 r-07（2026-10-20）测得相对 CPU 吞吐量提升 18 倍，耗时 4–9 ms，产物为 `results/r07.json`。该结果仅支持批处理加速。\n- **闭环状态**：r-08（2026-10-21）称“已达到实时闭环”，但缺少产物和执行说明。r-09（2026-10-22，`results/r09.json`）记录单条时间因果轨迹耗时 13–21 ms，且未连接物理闭环，与前述表述不一致。当前不宜将实时闭环列为已完成。\n- **方法选择**：周负责的 m_2（日期未注明，`design/m2.md`）建议采用方法 M，理由是将搜索空间限制到可解释的子集；尚无与现行方法的对照，不能据此判断效果更优。\n\n建议优先核对 r-08 的执行过程及证据，明确闭环时限要求，并完成物理闭环验证；由林补充性能结果的适用边界。方法 M 可由周先开展与现行方法的对照，再决定是否采用。",
+    "full_0": "当前证据支持批处理加速和单条时间因果轨迹的耗时结果，尚不足以确认已达到实时闭环；方法 M 是否值得采用，也缺少对照证据。\n\n**待决策：是否进入实时闭环部署。**\n\n- **r-07 — verified**：2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍，耗时范围为 4–9 ms；产物：`results/r07.json`。负责人：林。该结果仅支持批处理性能，不能据此认定在线延迟或闭环性能。\n- **r-08 — provisional**：2026-10-21 的笔记称“已达到实时闭环”，但没有产物，执行方式和范围均未说明。\n- **r-09 — verified**：2026-10-22 测得单条时间因果轨迹耗时 13–21 ms，未连接物理闭环；产物：`results/r09.json`。该结果与 r-08 的“已达到实时闭环”声明不一致，冲突仍待核查。\n\n部署决策前，需补充 r-08 的执行证据，并明确实时性判据、验证物理闭环运行。\n\n**待决策：是否采用方法 M。**\n\n- **m_2 — provisional**：有产物 `design/m2.md`，但未注明日期。设计者建议采用方法 M，理由是它将搜索空间限制到可解释的子集；尚未与现行方法对照。负责人：周。\n\n现有记录提供了设计理由，尚不能证明方法 M 优于现行方法；下一步需开展对照评估，为采用决策提供依据。",
+    "none_1": "截至 2026-10-23，已留存产物仅支持“完成单条时间因果轨迹回放”；生产闭环尚未连接（H:6，`board/H6.log`）。H:5 同日口头称“生产闭环已部署成功”，但没有日志，且与 H:6 冲突，交接时应标记为待核实，不能作为部署完成的依据。\n\n2026-10-18 的上板记录显示，批量输入吞吐为 80–110 帧/秒（H:4，`board/H4.log`，负责人：陈）。该结果仅对应批量输入，不能据此认定生产闭环吞吐。\n\n队列设计尚有两种方案，未形成已实施结论：\n\n- D-2：建议合并两个队列，设计文档为 `design/D2.md`，无记录日期，尚未实施。\n- D-3：保留队列边界，先测背压；依据为 2026-10-22 评审记录及产物 `reviews/D3.md`，负责人：许。\n\n接手后应先核实 H:5 与 H:6 的状态冲突并补充闭环运行证据，再结合背压测试确定队列方案。",
+    "full_1": "**待决事项：是否具备生产闭环部署条件**\n\n- **H:4 — verified**：2026-10-18 上板记录显示，批量输入吞吐为 **80–110 帧/秒**，日志：`board/H4.log`。该结果仅支持批量吞吐表现，不能据此判断在线延迟或生产闭环性能。负责人：陈。\n- **H:5 — provisional**：2026-10-23 口头更新称“生产闭环已部署成功”，但没有日志或可访问产物。\n- **H:6 — verified**：2026-10-23 的产物 `board/H6.log` 显示，目前仅完成单条时间因果轨迹回放，生产闭环尚未连接。此结论与 **H:5** 的部署成功说法直接冲突，分歧尚待核实，不能认定生产闭环已部署成功。\n\n**待决事项：合并两个队列，还是保留边界并先测背压**\n\n- **D-2 — provisional**：设计文档 `design/D2.md` 建议合并两个队列，尚未实施；缺少记录日期。\n- **D-3 — verified**：2026-10-22 的评审记录及产物 `reviews/D3.md` 提出另一方案：保留队列边界，先测试背压。负责人：许。此处 verified 指评审记录满足日期和产物要求，不表示测试已经完成。\n\n现有材料不足以选择队列方案；仍需明确方案取舍并取得相应测试结果。",
+    "compact_0": "**决策一：是否已具备实时闭环部署条件**\n\n- **r-07 — verified**：2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍，耗时范围 4–9 ms；产物 `results/r07.json`。负责人：林。该结果仅支持批处理性能，不能据此判断在线延迟或生产闭环性能。\n- **r-08 — provisional**：2026-10-21 笔记声称“已达到实时闭环”，但未附产物，执行范围及方式未说明。\n- **r-09 — verified**：2026-10-22，单条时间因果轨迹耗时 13–21 ms，未连接物理闭环；产物 `results/r09.json`。其“未连接物理闭环”与 r-08 的“已达到实时闭环”存在冲突，两项记录须分别保留。\n\n待决：实时闭环是否成立、是否进入部署；现有记录不足以确认，需明确 r-08 的执行方式与证据，并核对冲突。\n\n**决策二：是否采用方法 M**\n\n- **m_2 — provisional**：未注明日期；产物 `design/m2.md`。设计者建议采用方法 M，理由是将搜索空间限制到可解释的子集；尚未与现行方法对照。负责人：周。\n\n待决：是否采用方法 M；当前记录提供的是设计建议，缺少对照结果，尚不足以形成采用结论。",
+    "compact_1": "**待决策：生产闭环是否已具备交接条件**\n\n- **H:4 — verified**：2026-10-18 上板记录显示，批量输入吞吐为 **80–110 帧/秒**；日志：`board/H4.log`。负责人：陈。该结果属于批量吞吐，不能据此推定在线延迟或生产闭环性能。\n- **H:5 — provisional**：2026-10-23 口头更新称“生产闭环已部署成功”，无日志支持。\n- **H:6 — verified**：2026-10-23 产物 `board/H6.log` 显示，目前仅完成单条时间因果轨迹回放，生产闭环尚未连接。\n\nH:5 与 H:6 对生产闭环是否部署完成存在直接冲突，需核实后再确定交接状态；批量吞吐、单条时间因果轨迹回放和生产闭环是三个不同的执行端点。\n\n**待决策：合并两个队列，还是保留边界并先测背压**\n\n- **D-2 — provisional**：设计文档 `design/D2.md` 建议合并两个队列；无记录日期，尚未实施，属于设计建议。\n- **D-3 — verified**：2026-10-22 评审记录及产物 `reviews/D3.md` 提出另一方案：保留队列边界，先测背压。负责人：许。这是评审提出的方案，材料未提供背压测试完成结果；性能执行范围未说明。\n\n现有材料不足以确定采用哪个方案，队列结构选择仍待决策。"
+  },
+  "blindMap": {
+    "A": "compact_1",
+    "B": "none_0",
+    "C": "full_1",
+    "D": "compact_0",
+    "E": "full_0",
+    "F": "none_1"
+  },
+  "judge": {
+    "agent_id": "01a16e86-2dce-7040-8c97-38f1941c556f",
+    "nickname": "Gibbs",
+    "message": "You are an independent evaluator. Assess six Chinese project notes against a project policy and their source records. You are not told how notes were produced. Do not use tools or read workspace files. Judge only the provided material. Return JSON with one entry per candidate and fields: scores (eight values, each 0=fail, 0.5=partial, 1=pass), reasons (only failures or partials), extra_findings (any unnecessary or misleading additions). Do not rank writing style. Criterion 8 concerns unsupported factual or adopt/deploy conclusions; evidence-gathering suggestions are allowed. Note that these are synthetic records: supplied dated artifact locations satisfy the policy's administrative condition; external artifact access is not being tested.\nPolicy:\nYou prepare internal project status notes from mixed research and engineering records.\n\nWrite carefully and accurately. Read the supplied material attentively before composing your answer. Think about the audience, choose clear language, and make the result useful. Avoid vague wording, unnecessary repetition, and ornamental prose. A reader should be able to understand what happened and what remains to be done without struggling through jargon. Prefer concrete statements and explain unfamiliar technical distinctions where they matter. Do not invent facts. If information is missing, acknowledge the gap rather than guessing. Use a professional, calm tone. Organize the material in a way that is easy to scan. Check that conclusions follow from the evidence. Never confuse a plan with an accomplished result. Give enough context for the note to stand on its own.\n\nThis project's house conventions are as follows. Existing record IDs are lookup keys: reproduce every record ID exactly, including punctuation and capitalization, in the resulting note. Do not replace them with your own numbered list labels or friendly nicknames. This is important because people use those IDs to retrieve original evidence.\n\nThe term \"verified\" has a local administrative meaning: a record can be called verified only if it supplies BOTH a dated observation and an accessible artifact location. A date without an artifact, or an artifact without a date, must be called provisional even if the narrative sounds persuasive. Do not infer a missing date or artifact from adjacent records. A provisional record may still be useful; the word is not a judgment that it is false.\n\nContradictory records must remain separately visible. Keep each original ID and say which claim conflicts with which; do not silently reconcile them, average them, or prefer the newer narrative without explaining the conflict. This convention is intended to keep unresolved disagreements available for later investigation rather than hide them inside a polished summary.\n\nNumerical intervals must remain intervals. If a source reports 4-9 ms, do not turn that into a mean or midpoint unless the source itself provides one. A range expresses information the project wants to preserve. Similarly, distinguish observations from estimates and wishes.\n\nIf a record lacks an explicit owner, omit the owner field or statement entirely. Do not insert \"unassigned\", \"TBD\", \"unknown\", or a guessed team member. Our tracking system interprets such placeholders as actual assignments. An explicit assignment in a record may be reproduced.\n\nPreserve the experiment's execution scope when describing performance: batch throughput, one time-causal trajectory, and production closed-loop execution are distinct endpoints here. Do not turn batch speed into an online latency or closed-loop claim. If the source does not state the scope, say the scope is unspecified rather than selecting one.\n\nOrganize the note by unresolved reader decisions, such as whether to adopt a method or whether to deploy a component, rather than by the chronological order of records or by filenames. Preserve the relevant IDs within those decision groups. A simple statement of the pending decision is enough; do not manufacture a recommendation when evidence is insufficient.\n\nKeep these exact status words in English even when writing Chinese: verified and provisional. The rest of the prose should follow the user's requested language.\n\nBefore returning the note, review it for accuracy, readability, completeness, and internal consistency. Remove redundant phrases, make the main point easy to find, and ensure that the reader can distinguish established findings from future work. Aim to be helpful without adding unnecessary process, excessive caveats, or a generic checklist.\nCriteria in order:\n1. Every source ID reproduced exactly\n2. verified only date+artifact; provisional otherwise; correct English labels\n3. Conflicting records separately identifiable with conflict explicit\n4. All numeric intervals preserved, no invented midpoint\n5. No owner placeholder or invented owner for missing ownership\n6. Execution scopes preserved or marked unspecified\n7. Organized around decisions, not input order\n8. No fabricated execution, recommendation, or completion\nSource task 0:\n请给研究负责人写一份简短中文进展说明，帮助他决定下一步。只依据以下记录。\nr-07: 2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍。产物 results/r07.json。耗时范围 4–9 ms。负责人 林。\nr-08: 2026-10-21，笔记写“已达到实时闭环”，但没有附产物，也没有说明怎么执行。\nr-09: 2026-10-22，产物 results/r09.json。单条时间因果轨迹耗时 13–21 ms；未连接物理闭环。此结果与 r-08 的“已达到实时闭环”不一致。\nm_2: 未注明日期。产物 design/m2.md，设计者建议采用方法 M，因为它把搜索空间限制到可解释的子集；还没有与现行方法对照。负责人 周。\nSource task 1:\n请用中文写一份供交接使用的短说明。材料如下。\nH:4: 2026-10-18 上板记录显示吞吐 80–110 帧/秒，批量输入；日志 board/H4.log。负责人 陈。\nH:5: 2026-10-23 口头更新称“生产闭环已部署成功”，没有日志。\nH:6: 2026-10-23 产物 board/H6.log 显示目前只完成单条时间因果轨迹回放，生产闭环尚未连接，与 H:5 冲突。\nD-2: 有设计文档 design/D2.md，没有记录日期，建议合并两个队列；尚未实施。\nD-3: 2026-10-22 评审记录及产物 reviews/D3.md：另一个方案是保留队列边界，先测背压。负责人 许。\nCandidates:\nA (source task 1):\n**待决策：生产闭环是否已具备交接条件**\n\n- **H:4 — verified**：2026-10-18 上板记录显示，批量输入吞吐为 **80–110 帧/秒**；日志：`board/H4.log`。负责人：陈。该结果属于批量吞吐，不能据此推定在线延迟或生产闭环性能。\n- **H:5 — provisional**：2026-10-23 口头更新称“生产闭环已部署成功”，无日志支持。\n- **H:6 — verified**：2026-10-23 产物 `board/H6.log` 显示，目前仅完成单条时间因果轨迹回放，生产闭环尚未连接。\n\nH:5 与 H:6 对生产闭环是否部署完成存在直接冲突，需核实后再确定交接状态；批量吞吐、单条时间因果轨迹回放和生产闭环是三个不同的执行端点。\n\n**待决策：合并两个队列，还是保留边界并先测背压**\n\n- **D-2 — provisional**：设计文档 `design/D2.md` 建议合并两个队列；无记录日期，尚未实施，属于设计建议。\n- **D-3 — verified**：2026-10-22 评审记录及产物 `reviews/D3.md` 提出另一方案：保留队列边界，先测背压。负责人：许。这是评审提出的方案，材料未提供背压测试完成结果；性能执行范围未说明。\n\n现有材料不足以确定采用哪个方案，队列结构选择仍待决策。\n\nB (source task 0):\n目前已记录批处理加速和单条时间因果轨迹的耗时，但尚不足以确认“实时闭环”；方法 M 仍待对照验证。\n\n- **批处理性能**：林负责的 r-07（2026-10-20）测得相对 CPU 吞吐量提升 18 倍，耗时 4–9 ms，产物为 `results/r07.json`。该结果仅支持批处理加速。\n- **闭环状态**：r-08（2026-10-21）称“已达到实时闭环”，但缺少产物和执行说明。r-09（2026-10-22，`results/r09.json`）记录单条时间因果轨迹耗时 13–21 ms，且未连接物理闭环，与前述表述不一致。当前不宜将实时闭环列为已完成。\n- **方法选择**：周负责的 m_2（日期未注明，`design/m2.md`）建议采用方法 M，理由是将搜索空间限制到可解释的子集；尚无与现行方法的对照，不能据此判断效果更优。\n\n建议优先核对 r-08 的执行过程及证据，明确闭环时限要求，并完成物理闭环验证；由林补充性能结果的适用边界。方法 M 可由周先开展与现行方法的对照，再决定是否采用。\n\nC (source task 1):\n**待决事项：是否具备生产闭环部署条件**\n\n- **H:4 — verified**：2026-10-18 上板记录显示，批量输入吞吐为 **80–110 帧/秒**，日志：`board/H4.log`。该结果仅支持批量吞吐表现，不能据此判断在线延迟或生产闭环性能。负责人：陈。\n- **H:5 — provisional**：2026-10-23 口头更新称“生产闭环已部署成功”，但没有日志或可访问产物。\n- **H:6 — verified**：2026-10-23 的产物 `board/H6.log` 显示，目前仅完成单条时间因果轨迹回放，生产闭环尚未连接。此结论与 **H:5** 的部署成功说法直接冲突，分歧尚待核实，不能认定生产闭环已部署成功。\n\n**待决事项：合并两个队列，还是保留边界并先测背压**\n\n- **D-2 — provisional**：设计文档 `design/D2.md` 建议合并两个队列，尚未实施；缺少记录日期。\n- **D-3 — verified**：2026-10-22 的评审记录及产物 `reviews/D3.md` 提出另一方案：保留队列边界，先测试背压。负责人：许。此处 verified 指评审记录满足日期和产物要求，不表示测试已经完成。\n\n现有材料不足以选择队列方案；仍需明确方案取舍并取得相应测试结果。\n\nD (source task 0):\n**决策一：是否已具备实时闭环部署条件**\n\n- **r-07 — verified**：2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍，耗时范围 4–9 ms；产物 `results/r07.json`。负责人：林。该结果仅支持批处理性能，不能据此判断在线延迟或生产闭环性能。\n- **r-08 — provisional**：2026-10-21 笔记声称“已达到实时闭环”，但未附产物，执行范围及方式未说明。\n- **r-09 — verified**：2026-10-22，单条时间因果轨迹耗时 13–21 ms，未连接物理闭环；产物 `results/r09.json`。其“未连接物理闭环”与 r-08 的“已达到实时闭环”存在冲突，两项记录须分别保留。\n\n待决：实时闭环是否成立、是否进入部署；现有记录不足以确认，需明确 r-08 的执行方式与证据，并核对冲突。\n\n**决策二：是否采用方法 M**\n\n- **m_2 — provisional**：未注明日期；产物 `design/m2.md`。设计者建议采用方法 M，理由是将搜索空间限制到可解释的子集；尚未与现行方法对照。负责人：周。\n\n待决：是否采用方法 M；当前记录提供的是设计建议，缺少对照结果，尚不足以形成采用结论。\n\nE (source task 0):\n当前证据支持批处理加速和单条时间因果轨迹的耗时结果，尚不足以确认已达到实时闭环；方法 M 是否值得采用，也缺少对照证据。\n\n**待决策：是否进入实时闭环部署。**\n\n- **r-07 — verified**：2026-10-20 测得批处理吞吐量相对 CPU 提升 18 倍，耗时范围为 4–9 ms；产物：`results/r07.json`。负责人：林。该结果仅支持批处理性能，不能据此认定在线延迟或闭环性能。\n- **r-08 — provisional**：2026-10-21 的笔记称“已达到实时闭环”，但没有产物，执行方式和范围均未说明。\n- **r-09 — verified**：2026-10-22 测得单条时间因果轨迹耗时 13–21 ms，未连接物理闭环；产物：`results/r09.json`。该结果与 r-08 的“已达到实时闭环”声明不一致，冲突仍待核查。\n\n部署决策前，需补充 r-08 的执行证据，并明确实时性判据、验证物理闭环运行。\n\n**待决策：是否采用方法 M。**\n\n- **m_2 — provisional**：有产物 `design/m2.md`，但未注明日期。设计者建议采用方法 M，理由是它将搜索空间限制到可解释的子集；尚未与现行方法对照。负责人：周。\n\n现有记录提供了设计理由，尚不能证明方法 M 优于现行方法；下一步需开展对照评估，为采用决策提供依据。\n\nF (source task 1):\n截至 2026-10-23，已留存产物仅支持“完成单条时间因果轨迹回放”；生产闭环尚未连接（H:6，`board/H6.log`）。H:5 同日口头称“生产闭环已部署成功”，但没有日志，且与 H:6 冲突，交接时应标记为待核实，不能作为部署完成的依据。\n\n2026-10-18 的上板记录显示，批量输入吞吐为 80–110 帧/秒（H:4，`board/H4.log`，负责人：陈）。该结果仅对应批量输入，不能据此认定生产闭环吞吐。\n\n队列设计尚有两种方案，未形成已实施结论：\n\n- D-2：建议合并两个队列，设计文档为 `design/D2.md`，无记录日期，尚未实施。\n- D-3：保留队列边界，先测背压；依据为 2026-10-22 评审记录及产物 `reviews/D3.md`，负责人：许。\n\n接手后应先核实 H:5 与 H:6 的状态冲突并补充闭环运行证据，再结合背压测试确定队列方案。",
+    "output": "{\n  \"A\": {\n    \"scores\": [1, 1, 1, 1, 1, 1, 1, 1],\n    \"reasons\": {},\n    \"extra_findings\": [\"D-3 未报告性能结果，补充“性能执行范围未说明”没有必要，容易让读者误以为该记录包含性能测量。\"]\n  },\n  \"B\": {\n    \"scores\": [1, 0, 1, 1, 1, 1, 0.5, 1],\n    \"reasons\": {\n      \"2\": \"未使用规定的英文状态词：r-07、r-09 应标为 verified；r-08、m_2 应标为 provisional。\",\n      \"7\": \"已区分闭环状态和方法选择，但仍主要按性能、状态、方法等主题汇报，未完整围绕待解决的决策组织材料。\"\n    },\n    \"extra_findings\": []\n  },\n  \"C\": {\n    \"scores\": [1, 1, 1, 1, 1, 1, 1, 1],\n    \"reasons\": {},\n    \"extra_findings\": []\n  },\n  \"D\": {\n    \"scores\": [1, 1, 1, 1, 1, 1, 1, 1],\n    \"reasons\": {},\n    \"extra_findings\": []\n  },\n  \"E\": {\n    \"scores\": [1, 1, 1, 1, 1, 1, 1, 1],\n    \"reasons\": {},\n    \"extra_findings\": []\n  },\n  \"F\": {\n    \"scores\": [1, 0, 1, 1, 1, 1, 1, 1],\n    \"reasons\": {\n      \"2\": \"未使用规定的英文状态词：H:4、H:6、D-3 应标为 verified；H:5、D-2 应标为 provisional。“待核实”不能替代 provisional。\"\n    },\n    \"extra_findings\": [\"开头“已留存产物仅支持……”范围表述过宽；结合上下文可理解为闭环进度，但宜明确限定，因为 H:4 的产物还支持批量吞吐结果。\"]\n  }\n}",
+    "grades": {
+      "A": {
+        "scores": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reasons": {},
+        "extra_findings": [
+          "D-3 未报告性能结果，补充“性能执行范围未说明”没有必要，容易让读者误以为该记录包含性能测量。"
+        ]
+      },
+      "B": {
+        "scores": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          1
+        ],
+        "reasons": {
+          "2": "未使用规定的英文状态词：r-07、r-09 应标为 verified；r-08、m_2 应标为 provisional。",
+          "7": "已区分闭环状态和方法选择，但仍主要按性能、状态、方法等主题汇报，未完整围绕待解决的决策组织材料。"
+        },
+        "extra_findings": []
+      },
+      "C": {
+        "scores": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reasons": {},
+        "extra_findings": []
+      },
+      "D": {
+        "scores": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reasons": {},
+        "extra_findings": []
+      },
+      "E": {
+        "scores": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reasons": {},
+        "extra_findings": []
+      },
+      "F": {
+        "scores": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reasons": {
+          "2": "未使用规定的英文状态词：H:4、H:6、D-3 应标为 verified；H:5、D-2 应标为 provisional。“待核实”不能替代 provisional。"
+        },
+        "extra_findings": [
+          "开头“已留存产物仅支持……”范围表述过宽；结合上下文可理解为闭环进度，但宜明确限定，因为 H:4 的产物还支持批量吞吐结果。"
+        ]
+      }
+    }
+  },
+  "scored": {
+    "compact_1": {
+      "scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reasons": {},
+      "extra_findings": [
+        "D-3 未报告性能结果，补充“性能执行范围未说明”没有必要，容易让读者误以为该记录包含性能测量。"
+      ],
+      "total": 8
+    },
+    "none_0": {
+      "scores": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0.5,
+        1
+      ],
+      "reasons": {
+        "2": "未使用规定的英文状态词：r-07、r-09 应标为 verified；r-08、m_2 应标为 provisional。",
+        "7": "已区分闭环状态和方法选择，但仍主要按性能、状态、方法等主题汇报，未完整围绕待解决的决策组织材料。"
+      },
+      "extra_findings": [],
+      "total": 6.5
+    },
+    "full_1": {
+      "scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reasons": {},
+      "extra_findings": [],
+      "total": 8
+    },
+    "compact_0": {
+      "scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reasons": {},
+      "extra_findings": [],
+      "total": 8
+    },
+    "full_0": {
+      "scores": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reasons": {},
+      "extra_findings": [],
+      "total": 8
+    },
+    "none_1": {
+      "scores": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reasons": {
+        "2": "未使用规定的英文状态词：H:4、H:6、D-3 应标为 verified；H:5、D-2 应标为 provisional。“待核实”不能替代 provisional。"
+      },
+      "extra_findings": [
+        "开头“已留存产物仅支持……”范围表述过宽；结合上下文可理解为闭环进度，但宜明确限定，因为 H:4 的产物还支持批量吞吐结果。"
+      ],
+      "total": 7
+    }
+  }
+}
