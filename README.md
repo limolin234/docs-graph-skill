@@ -1,8 +1,8 @@
 # docs-graph skill
 
-`docs-graph` organizes evolving project knowledge as directories with `README.md` content. Names and nesting provide an overview; cross-references connect branches into a graph.
+`docs-graph` preserves project ideas and research reasoning as directories with `README.md` content. Names and nesting provide an overview; cross-references connect branches into a graph.
 
-Relationships stay in natural language. The model explores with `tree` and `rg`, reads relevant nodes, and improves the graph as it works. No fixed ontology, line limit, or database is required.
+Relationships stay in natural language. The model explores ideas with `tree` and selected READMEs, then uses `rg` to find underlying material. Bulk data and source documents stay outside the graph; there is no file inventory to synchronize. Update nodes as understanding changes.
 
 See [the skill](docs-graph/SKILL.md) for the conventions. It works with or without Git.
 
